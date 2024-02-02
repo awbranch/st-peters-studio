@@ -8,14 +8,20 @@ export default defineType({
   type: 'document',
   icon,
   fields: [
-    // defineField({
-    //   title: 'Categories',
-    //   name: 'categories',
-    //   type: 'tags',
-    //   options: {
-    //     includeFromReference: 'newsCategory',
-    //   },
-    // }),
+    defineField({
+      title: 'Categories',
+      name: 'categories',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'newsCategory'}],
+          options: {
+            disableNew: true,
+          },
+        },
+      ],
+    }),
     defineField({
       name: 'date',
       title: 'Date',
