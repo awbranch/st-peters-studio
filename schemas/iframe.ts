@@ -2,10 +2,10 @@ import { defineField, defineType } from 'sanity';
 import { FaRegSquare as icon } from 'react-icons/fa6';
 
 export default defineType({
-  name: 'iframeBlock',
-  title: 'Iframe Block',
+  name: 'iframe',
+  title: 'Iframe',
   type: 'object',
-  description: 'A block that contains an iframe.',
+  description: 'A box that contains an iframe.',
   icon,
   fields: [
     defineField({
@@ -19,7 +19,7 @@ export default defineType({
     select: {},
     prepare() {
       return {
-        title: 'Iframe Block',
+        title: 'Iframe',
         media: icon,
       };
     },

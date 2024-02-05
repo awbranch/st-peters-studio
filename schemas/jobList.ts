@@ -1,20 +1,20 @@
-import {defineArrayMember, defineField, defineType} from 'sanity'
-import {createImageField} from './utils'
-import {FaPersonDigging as icon} from 'react-icons/fa6'
+import { defineArrayMember, defineField, defineType } from 'sanity';
+import { createImageField } from './utils';
+import { FaPersonDigging as icon } from 'react-icons/fa6';
 
 export default defineType({
-  name: 'jobsBlock',
-  title: 'Jobs Block',
+  name: 'jobList',
+  title: 'Job List',
   type: 'object',
   icon,
-  description: 'A block that displays job openings.',
+  description: 'A lost of job openings.',
   fields: [
     createImageField('image', 'Image'),
     defineField({
       name: 'jobs',
       title: 'Jobs',
       type: 'array',
-      of: [defineArrayMember({type: 'job'})],
+      of: [defineArrayMember({ type: 'job' })],
     }),
     defineField({
       name: 'eooStatement',
@@ -30,12 +30,12 @@ export default defineType({
     }),
   ],
   preview: {
-    select: {jobs: 'jobs'},
-    prepare({jobs}) {
+    select: { jobs: 'jobs' },
+    prepare({ jobs }) {
       return {
-        title: jobs !== undefined ? `${jobs?.length} Jobs` : 'Jobs Block',
+        title: jobs !== undefined ? `${jobs?.length} Jobs` : 'Job List',
         media: icon,
-      }
+      };
     },
   },
-})
+});

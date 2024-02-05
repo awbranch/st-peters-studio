@@ -2,8 +2,8 @@ import { defineField, defineType } from 'sanity';
 import { FaRegWindowMaximize as icon } from 'react-icons/fa';
 
 export default defineType({
-  name: 'volunteerFormBlock',
-  title: 'Volunteer Form Block',
+  name: 'volunteerForm',
+  title: 'Volunteer Form',
   type: 'object',
   icon,
   description: 'A block that displays a form.',
@@ -19,7 +19,7 @@ export default defineType({
     select: { tbd: 'tbd' },
     prepare({ tbd }) {
       return {
-        title: 'Volunteer Form Block',
+        title: 'Volunteer Form',
         subtitle: tbd,
         media: icon,
       };

@@ -1,13 +1,13 @@
-import {defineField, defineType} from 'sanity'
-import {FaBoltLightning as icon} from 'react-icons/fa6'
-import {createImageField, createRichTextBlock} from './utils'
+import { defineField, defineType } from 'sanity';
+import { FaBoltLightning as icon } from 'react-icons/fa6';
+import { createImageField, createRichTextBlock } from './utils';
 
 export default defineType({
-  name: 'cta',
-  title: 'Call to Action',
+  name: 'callToActionListItem',
+  title: 'Call to Action List Item',
   type: 'object',
   icon,
-  description: 'A call to action.',
+  description: 'A call to action list item.',
   fields: [
     defineField({
       name: 'title',
@@ -27,4 +27,4 @@ export default defineType({
       type: 'button',
     }),
   ],
-})
+});

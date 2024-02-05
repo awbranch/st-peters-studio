@@ -1,11 +1,11 @@
-import {defineField, defineType} from 'sanity'
-import {FaBars} from 'react-icons/fa6'
-import {FaLink} from 'react-icons/fa'
+import { defineField, defineType } from 'sanity';
+import { FaBars } from 'react-icons/fa6';
+import { FaLink } from 'react-icons/fa';
 
 const actionList = [
-  {title: 'Go to Link', value: 'link'},
-  {title: 'Display Menu', value: 'menu'},
-]
+  { title: 'Go to Link', value: 'link' },
+  { title: 'Display Menu', value: 'menu' },
+];
 
 export default defineType({
   name: 'menuItem',
@@ -34,21 +34,21 @@ export default defineType({
       name: 'url',
       title: 'Link',
       type: 'string',
-      hidden: ({parent}) => !(parent?.action === 'link'),
+      hidden: ({ parent }) => !(parent?.action === 'link'),
       validation: (Rule) =>
-        Rule.custom((url, {parent}: any) => {
+        Rule.custom((url, { parent }: any) => {
           if (!url && parent.action === 'link') {
-            return 'Required when Action is "Go to Link"'
+            return 'Required when Action is "Go to Link"';
           }
-          return true
+          return true;
         }),
     }),
     defineField({
       name: 'menu',
       title: 'Menu',
       type: 'array',
-      of: [{type: 'link'}],
-      hidden: ({parent}) => !(parent?.action === 'menu'),
+      of: [{ type: 'link' }],
+      hidden: ({ parent }) => !(parent?.action === 'menu'),
     }),
   ],
   preview: {
@@ -57,12 +57,12 @@ export default defineType({
       url: 'url',
       action: 'action',
     },
-    prepare({name, url, action}) {
+    prepare({ name, url, action }) {
       return {
         title: name,
         subtitle: action === 'link' ? url : 'display menu',
         media: action === 'link' ? FaLink : FaBars,
-      }
+      };
     },
   },
-})
+});

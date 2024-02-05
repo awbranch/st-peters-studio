@@ -2,25 +2,25 @@ import { defineArrayMember, defineField, defineType } from 'sanity';
 import { MdOutlineChecklistRtl as icon } from 'react-icons/md';
 
 export default defineType({
-  name: 'ctaListBlock',
-  title: 'Call to Action List Block',
+  name: 'callToActionList',
+  title: 'Call to Action List',
   type: 'object',
   icon,
   description: 'A list of call to actions.',
   fields: [
     defineField({
-      name: 'ctas',
+      name: 'items',
       title: 'Call to Actions',
       type: 'array',
-      of: [defineArrayMember({ type: 'cta' })],
+      of: [defineArrayMember({ type: 'callToActionListItem' })],
     }),
   ],
   preview: {
-    select: { ctas: 'ctas' },
-    prepare({ ctas }) {
+    select: { items: 'items' },
+    prepare({ items }) {
       return {
-        title: 'Call to Action List Block',
-        subtitle: ctas?.length && `${ctas.length} CTAs`,
+        title: 'Call to Action List',
+        subtitle: items?.length && `${items.length} CTAs`,
         media: icon,
       };
     },

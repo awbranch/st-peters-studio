@@ -1,5 +1,5 @@
-import {defineField, defineType} from 'sanity'
-import {createImageField} from './utils'
+import { defineField, defineType } from 'sanity';
+import { createImageField } from './utils';
 
 export default defineType({
   name: 'imageTile',
@@ -20,4 +20,4 @@ export default defineType({
       validation: (Rule: any) => Rule.required(),
     }),
   ],
-})
+});

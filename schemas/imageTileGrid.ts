@@ -2,8 +2,8 @@ import { defineField, defineType } from 'sanity';
 import { FaImages as icon } from 'react-icons/fa6';
 
 export default defineType({
-  name: 'imageTileGridBlock',
-  title: 'Image Tile Grid Block',
+  name: 'imageTileGrid',
+  title: 'Image Tile Grid',
   type: 'object',
   icon,
   description: 'A grid of large image tiles',
@@ -19,7 +19,7 @@ export default defineType({
     select: { images: 'images' },
     prepare({ images }) {
       return {
-        title: 'Image Tile Grid Block',
+        title: 'Image Tile Grid',
         subtitle: images?.length && `${images?.length} Image Tiles`,
         media: icon,
       };

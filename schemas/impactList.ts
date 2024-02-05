@@ -2,8 +2,8 @@ import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaFistRaised as icon } from 'react-icons/fa';
 
 export default defineType({
-  name: 'impactBlock',
-  title: 'Impact Block',
+  name: 'impactList',
+  title: 'Impact List',
   type: 'object',
   icon,
   description: 'List impactful data',
@@ -19,7 +19,7 @@ export default defineType({
     select: { impacts: 'impacts' },
     prepare({ impacts }) {
       return {
-        title: 'Impact Block',
+        title: 'Impact List',
         subtitle: impacts?.length && `${impacts?.length} Impact Statements`,
         media: icon,
       };

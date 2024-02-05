@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity';
 import { FaFile as icon } from 'react-icons/fa6';
 
 export default defineType({
-  name: 'doc',
+  name: 'documentListItem',
   title: 'Document',
   type: 'object',
   icon,

@@ -1,6 +1,6 @@
-import {defineField, defineType} from 'sanity'
-import {FaRegHandPointer as icon} from 'react-icons/fa'
-import {userColorList} from './globals'
+import { defineField, defineType } from 'sanity';
+import { FaRegHandPointer as icon } from 'react-icons/fa';
+import { userColorList } from './globals';
 
 export default defineType({
   name: 'button',
@@ -23,8 +23,8 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          {title: 'Solid', value: 'solid'},
-          {title: 'Outline', value: 'outline'},
+          { title: 'Solid', value: 'solid' },
+          { title: 'Outline', value: 'outline' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -38,10 +38,10 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          {title: 'None', value: 'none'},
-          {title: 'Left Arrow', value: 'left'},
-          {title: 'Right Arrow', value: 'right'},
-          {title: 'Down Arrow', value: 'down'},
+          { title: 'None', value: 'none' },
+          { title: 'Left Arrow', value: 'left' },
+          { title: 'Right Arrow', value: 'right' },
+          { title: 'Down Arrow', value: 'down' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -66,12 +66,12 @@ export default defineType({
       label: 'label',
       link: 'link',
     },
-    prepare({label, link}) {
+    prepare({ label, link }) {
       return {
         title: label,
         subtitle: link,
         icon: icon,
-      }
+      };
     },
   },
-})
+});

@@ -1,6 +1,6 @@
-import {defineField, defineType} from 'sanity'
-import {createRichTextBlock} from './utils'
-import {FaWindowMaximize as icon} from 'react-icons/fa'
+import { defineField, defineType } from 'sanity';
+import { createRichTextBlock } from './utils';
+import { FaWindowMaximize as icon } from 'react-icons/fa';
 
 export default defineType({
   name: 'header',
@@ -29,14 +29,15 @@ export default defineType({
       title: 'Notification Message',
       type: 'array',
       of: [createRichTextBlock(['decorators'])],
-      hidden: ({document}) => !document?.showNotification,
+      hidden: ({ document }) => !document?.showNotification,
       group: 'notification',
     }),
     defineField({
       name: 'notificationBackground',
       title: 'Notification Background',
       type: 'simplerColor',
-      description: 'The background color for the bar, if not set it defaults to black.',
+      description:
+        'The background color for the bar, if not set it defaults to black.',
       group: 'notification',
     }),
     defineField({
@@ -72,14 +73,14 @@ export default defineType({
       name: 'menuItems',
       title: 'Menu Items',
       type: 'array',
-      of: [{type: 'menuItem'}],
+      of: [{ type: 'menuItem' }],
       group: 'navigation',
     }),
     defineField({
       name: 'actionButtons',
       title: 'Action Buttons',
       type: 'array',
-      of: [{type: 'button'}],
+      of: [{ type: 'button' }],
       group: 'navigation',
       validation: (Rule: any) => Rule.max(1),
     }),
@@ -88,7 +89,7 @@ export default defineType({
     prepare() {
       return {
         title: 'Header',
-      }
+      };
     },
   },
-})
+});

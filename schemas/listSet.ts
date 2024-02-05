@@ -2,8 +2,8 @@ import { defineArrayMember, defineField, defineType } from 'sanity';
 import { PiTextColumnsBold as icon } from 'react-icons/pi';
 
 export default defineType({
-  name: 'listSetBlock',
-  title: 'List Set Block',
+  name: 'listSet',
+  title: 'List Set',
   type: 'object',
   icon,
   description: 'A set of one or more named lists, good for wish lists.',
@@ -19,7 +19,7 @@ export default defineType({
     select: { lists: 'lists' },
     prepare({ lists }) {
       return {
-        title: 'List Set Block',
+        title: 'List Set',
         subtitle: lists?.length && `${lists.length} Lists`,
         media: icon,
       };

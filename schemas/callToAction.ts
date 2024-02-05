@@ -1,10 +1,14 @@
-import {defineField, defineType} from 'sanity'
-import {FaBoltLightning as icon} from 'react-icons/fa6'
-import {createImageField, createRichTextBlock, getFirstBlockText} from './utils'
+import { defineField, defineType } from 'sanity';
+import { FaBoltLightning as icon } from 'react-icons/fa6';
+import {
+  createImageField,
+  createRichTextBlock,
+  getFirstBlockText,
+} from './utils';
 
 export default defineType({
-  name: 'ctaBlock',
-  title: 'Call to Action Block',
+  name: 'callToAction',
+  title: 'Call to Action',
   type: 'object',
   icon,
   description: 'A large call to action that is displayed landscape.',
@@ -15,8 +19,8 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          {title: 'Left', value: 'left'},
-          {title: 'Right', value: 'right'},
+          { title: 'Left', value: 'left' },
+          { title: 'Right', value: 'right' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -37,13 +41,13 @@ export default defineType({
     }),
   ],
   preview: {
-    select: {text: 'text', image: 'image'},
-    prepare({text, image}) {
+    select: { text: 'text', image: 'image' },
+    prepare({ text, image }) {
       return {
         title: 'Call to Action Block',
         subtitle: getFirstBlockText(text),
         media: image,
-      }
+      };
     },
   },
-})
+});

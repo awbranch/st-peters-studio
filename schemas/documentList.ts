@@ -1,25 +1,26 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { IoGrid as icon } from 'react-icons/io5';
+import { FaFile as icon } from 'react-icons/fa6';
 
 export default defineType({
-  name: 'iconListBlock',
-  title: 'Icon List Block',
+  name: 'documentList',
+  title: 'Document List',
   type: 'object',
   icon,
+  description: 'List documents',
   fields: [
     defineField({
       name: 'items',
       title: 'Items',
       type: 'array',
-      of: [defineArrayMember({ type: 'iconListItem' })],
+      of: [defineArrayMember({ type: 'documentListItem' })],
     }),
   ],
   preview: {
     select: { items: 'items' },
     prepare({ items }) {
       return {
-        title: 'Icon List Block',
-        subtitle: items?.length && `${items?.length} Items`,
+        title: 'Document List',
+        subtitle: items?.length && `${items.length} Documents`,
         media: icon,
       };
     },

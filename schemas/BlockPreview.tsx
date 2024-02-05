@@ -4,7 +4,7 @@ type Props = {
   color: string;
 };
 
-export default function SectionPreview({ color = '#fff' }: Props) {
+export default function BlockPreview({ color = '#fff' }: Props) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
       <g>

@@ -1,6 +1,6 @@
-import {defineField, defineType} from 'sanity'
-import {FaQuestionCircle as icon} from 'react-icons/fa'
-import {createRichTextBlock} from './utils'
+import { defineField, defineType } from 'sanity';
+import { FaQuestionCircle as icon } from 'react-icons/fa';
+import { createRichTextBlock } from './utils';
 
 export default defineType({
   name: 'faq',
@@ -22,4 +22,4 @@ export default defineType({
       validation: (Rule: any) => Rule.required(),
     }),
   ],
-})
+});

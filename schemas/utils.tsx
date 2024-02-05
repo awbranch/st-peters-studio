@@ -5,7 +5,7 @@ import {
   defineArrayMember,
   defineField,
   PortableTextBlock,
-} from 'sanity'
+} from 'sanity';
 
 export function createImageField(name: string, title: string, group?: string) {
   return defineField({
@@ -25,7 +25,7 @@ export function createImageField(name: string, title: string, group?: string) {
       }),
     ],
     validation: (Rule: any) => Rule.required(),
-  })
+  });
 }
 
 export type CRTLevel =
@@ -38,60 +38,62 @@ export type CRTLevel =
   | 'lists'
   | 'decorators'
   | 'links'
-  | 'textColor'
+  | 'textColor';
 
 export function createRichTextBlock(levels: Array<CRTLevel> = ['all']) {
-  const styles: BlockStyleDefinition[] = []
-  const lists: BlockListDefinition[] = []
-  const decorators: BlockDecoratorDefinition[] = []
-  const annotations = []
+  const styles: BlockStyleDefinition[] = [];
+  const lists: BlockListDefinition[] = [];
+  const decorators: BlockDecoratorDefinition[] = [];
+  const annotations = [];
 
   if (levels.includes('all') || levels.includes('h1')) {
-    styles.push({title: 'Heading 1', value: 'h1'})
+    styles.push({ title: 'Heading 1', value: 'h1' });
   }
 
   if (levels.includes('all') || levels.includes('h2')) {
-    styles.push({title: 'Heading 2', value: 'h2'})
+    styles.push({ title: 'Heading 2', value: 'h2' });
   }
 
   if (levels.includes('all') || levels.includes('subtitle')) {
     styles.push({
       title: 'Subtitle',
       value: 'subtitle',
-      component: ({children}) => (
-        <span style={{fontSize: '1.2rem', opacity: '0.8'}}>{children}</span>
+      component: ({ children }) => (
+        <span style={{ fontSize: '1.2rem', opacity: '0.8' }}>{children}</span>
       ),
-    })
+    });
   }
 
   if (levels.includes('all') || levels.includes('small')) {
     styles.push({
       title: 'Small',
       value: 'small',
-      component: ({children}) => <span style={{fontSize: '0.8rem'}}>{children}</span>,
-    })
+      component: ({ children }) => (
+        <span style={{ fontSize: '0.8rem' }}>{children}</span>
+      ),
+    });
   }
 
   if (levels.includes('all') || levels.includes('blockquote')) {
-    styles.push({title: 'Quote', value: 'blockquote'})
+    styles.push({ title: 'Quote', value: 'blockquote' });
   }
 
   if (levels.includes('all') || levels.includes('lists')) {
     lists.push(
       ...[
-        {title: 'Bulleted List', value: 'bullet'},
-        {title: 'Numbered List', value: 'number'},
+        { title: 'Bulleted List', value: 'bullet' },
+        { title: 'Numbered List', value: 'number' },
       ],
-    )
+    );
   }
 
   if (levels.includes('all') || levels.includes('decorators')) {
     decorators.push(
       ...[
-        {title: 'Bold', value: 'strong'},
-        {title: 'Italic', value: 'em'},
+        { title: 'Bold', value: 'strong' },
+        { title: 'Italic', value: 'em' },
       ],
-    )
+    );
   }
 
   if (levels.includes('all') || levels.includes('links')) {
@@ -110,11 +112,11 @@ export function createRichTextBlock(levels: Array<CRTLevel> = ['all']) {
             }),
         },
       ],
-    })
+    });
   }
 
   if (levels.includes('all') || levels.includes('textColor')) {
-    annotations.push({type: 'textColor'})
+    annotations.push({ type: 'textColor' });
   }
 
   return defineArrayMember({
@@ -125,13 +127,13 @@ export function createRichTextBlock(levels: Array<CRTLevel> = ['all']) {
       decorators: decorators,
       annotations: annotations,
     },
-  })
+  });
 }
 
 export function getFirstBlockText(portableText: PortableTextBlock[]): string {
-  const block = (portableText || []).find((block) => block._type === 'block')
+  const block = (portableText || []).find((block) => block._type === 'block');
   return (block?.children as any)
     .filter((child: any) => child?._type === 'span')
     .map((span: any) => span?.text)
-    .join('')
+    .join('');
 }

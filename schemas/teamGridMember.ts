@@ -1,6 +1,6 @@
-import {defineField, defineType} from 'sanity'
-import {createImageField} from './utils'
-import {FaPerson as icon} from 'react-icons/fa6'
+import { defineField, defineType } from 'sanity';
+import { createImageField } from './utils';
+import { FaPerson as icon } from 'react-icons/fa6';
 
 export default defineType({
   name: 'teamGridMember',
@@ -32,6 +32,6 @@ export default defineType({
     }),
   ],
   preview: {
-    select: {media: 'image', title: 'name', subtitle: 'title'},
+    select: { media: 'image', title: 'name', subtitle: 'title' },
   },
-})
+});

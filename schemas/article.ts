@@ -1,10 +1,14 @@
-import {defineField, defineType} from 'sanity'
-import {createImageField, createRichTextBlock, getFirstBlockText} from './utils'
-import {FaRegFileAlt as icon} from 'react-icons/fa'
+import { defineField, defineType } from 'sanity';
+import {
+  createImageField,
+  createRichTextBlock,
+  getFirstBlockText,
+} from './utils';
+import { FaRegFileAlt as icon } from 'react-icons/fa';
 
 export default defineType({
-  name: 'articleBlock',
-  title: 'Article Block',
+  name: 'article',
+  title: 'Article',
   type: 'object',
   icon,
   description: 'Display long form text with embedded images.',
@@ -16,18 +20,18 @@ export default defineType({
       of: [
         createRichTextBlock(),
         createImageField('image', 'Image'),
-        {type: 'buttonRow'},
-        {type: 'bookmark'},
+        { type: 'buttonRow' },
+        { type: 'bookmark' },
       ],
     }),
   ],
   preview: {
-    select: {text: 'text'},
-    prepare({text}) {
+    select: { text: 'text' },
+    prepare({ text }) {
       return {
-        title: 'Article Block',
+        title: 'Article',
         subtitle: getFirstBlockText(text),
-      }
+      };
     },
   },
-})
+});

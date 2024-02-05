@@ -1,41 +1,41 @@
-import header from './header'
-import footer from './footer'
-import page from './page'
-import section from './section'
-import blocks from './blocks'
-import shareableBlockSet from './shareableBlockSet'
+import header from './header';
+import footer from './footer';
+import page from './page';
+import block from './pageBlock';
+import components from './components';
+import componentSet from './componentSet';
 
-import action from './action'
-import address from './address'
-import bookmark from './bookmark'
-import button from './button'
-import buttonRow from './buttonRow'
-import buttonTile from './buttonTile'
-import contactFormSubject from './contactFormSubject'
-import cta from './cta'
-import doc from './doc'
-import faq from './faq'
-import iconListItem from './iconListItem'
-import imageTile from './imageTile'
-import impact from './impact'
-import job from './job'
-import link from './link'
-import lunchMenu from './lunchMenu'
-import listSetList from './listSetList'
-import menuItem from './menuItem'
-import newsCategory from './newsCategory'
-import newsStory from './newsStory'
-import social from './social'
-import teamGridMember from './teamGridMember'
-import teamListMember from './teamListMember'
+import action from './action';
+import address from './address';
+import bookmark from './bookmark';
+import button from './button';
+import buttonRow from './buttonRow';
+import buttonTile from './buttonTile';
+import contactFormSubject from './contactFormSubject';
+import callToActionListItem from './callToActionListItem';
+import documentListItem from './documentListItem';
+import faq from './faq';
+import iconListItem from './iconListItem';
+import imageTile from './imageTile';
+import impact from './impact';
+import job from './job';
+import link from './link';
+import lunchMenu from './lunchMenu';
+import listSetList from './listSetList';
+import menuItem from './menuItem';
+import newsCategory from './newsCategory';
+import newsStory from './newsStory';
+import social from './social';
+import teamGridMember from './teamGridMember';
+import teamListMember from './teamListMember';
 
 export const schemaTypes = [
   header,
   footer,
   page,
-  section,
-  ...blocks,
-  shareableBlockSet,
+  block,
+  ...components,
+  componentSet,
   action,
   address,
   bookmark,
@@ -43,8 +43,8 @@ export const schemaTypes = [
   buttonRow,
   buttonTile,
   contactFormSubject,
-  cta,
-  doc,
+  callToActionListItem,
+  documentListItem,
   faq,
   iconListItem,
   imageTile,
@@ -59,4 +59,4 @@ export const schemaTypes = [
   social,
   teamGridMember,
   teamListMember,
-]
+];

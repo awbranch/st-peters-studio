@@ -1,5 +1,5 @@
-import {defineField, defineType} from 'sanity'
-import {FaFistRaised as icon} from 'react-icons/fa'
+import { defineField, defineType } from 'sanity';
+import { FaFistRaised as icon } from 'react-icons/fa';
 
 export default defineType({
   name: 'impact',
@@ -26,12 +26,12 @@ export default defineType({
       category: 'category',
       value: 'value',
     },
-    prepare({category, value}) {
+    prepare({ category, value }) {
       return {
         title: category,
         subtitle: value?.toLocaleString(),
         icon: icon,
-      }
+      };
     },
   },
-})
+});

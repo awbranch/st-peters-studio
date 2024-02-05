@@ -1,5 +1,5 @@
-import {defineField, defineType} from 'sanity'
-import {FaBolt as icon} from 'react-icons/fa6'
+import { defineField, defineType } from 'sanity';
+import { FaBolt as icon } from 'react-icons/fa6';
 
 export default defineType({
   name: 'action',
@@ -25,12 +25,12 @@ export default defineType({
       name: 'name',
       link: 'link',
     },
-    prepare({name, link}) {
+    prepare({ name, link }) {
       return {
         title: name,
         subtitle: link,
         icon: icon,
-      }
+      };
     },
   },
-})
+});

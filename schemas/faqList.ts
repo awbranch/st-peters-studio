@@ -2,8 +2,8 @@ import { defineField, defineType } from 'sanity';
 import { FaQuestionCircle as icon } from 'react-icons/fa';
 
 export default defineType({
-  name: 'faqsBlock',
-  title: 'FAQs Block',
+  name: 'faqList',
+  title: 'FAQ List',
   type: 'object',
   icon,
   description: 'List of frequently asked questions',
@@ -19,7 +19,7 @@ export default defineType({
     select: { faqs: 'faqs' },
     prepare({ faqs }) {
       return {
-        title: 'FAQs Block',
+        title: 'FAQs List',
         subtitle: faqs?.length && `${faqs.length} Questions`,
         media: icon,
       };
