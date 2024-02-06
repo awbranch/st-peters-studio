@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { createRichTextBlock } from './utils';
 import { FaWindowMaximize as icon } from 'react-icons/fa';
 
@@ -28,7 +28,7 @@ export default defineType({
       name: 'notificationMessage',
       title: 'Notification Message',
       type: 'array',
-      of: [createRichTextBlock(['decorators'])],
+      of: [defineArrayMember(createRichTextBlock(['decorators']))],
       hidden: ({ document }) => !document?.showNotification,
       group: 'notification',
     }),
@@ -73,14 +73,14 @@ export default defineType({
       name: 'menuItems',
       title: 'Menu Items',
       type: 'array',
-      of: [{ type: 'menuItem' }],
+      of: [defineArrayMember({ type: 'menuItem' })],
       group: 'navigation',
     }),
     defineField({
       name: 'actionButtons',
       title: 'Action Buttons',
       type: 'array',
-      of: [{ type: 'button' }],
+      of: [defineArrayMember({ type: 'button' })],
       group: 'navigation',
       validation: (Rule: any) => Rule.max(1),
     }),

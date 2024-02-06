@@ -2,7 +2,6 @@ import {
   BlockDecoratorDefinition,
   BlockListDefinition,
   BlockStyleDefinition,
-  defineArrayMember,
   defineField,
   PortableTextBlock,
 } from 'sanity';
@@ -119,7 +118,7 @@ export function createRichTextBlock(levels: Array<CRTLevel> = ['all']) {
     annotations.push({ type: 'textColor' });
   }
 
-  return defineArrayMember({
+  return {
     type: 'block',
     styles,
     lists,
@@ -127,7 +126,7 @@ export function createRichTextBlock(levels: Array<CRTLevel> = ['all']) {
       decorators: decorators,
       annotations: annotations,
     },
-  });
+  };
 }
 
 export function getFirstBlockText(portableText: PortableTextBlock[]): string {

@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType, defineArrayMember } from 'sanity';
 import { PiDotsThreeOutline as icon } from 'react-icons/pi';
 
 export default defineType({
@@ -27,7 +27,7 @@ export default defineType({
       name: 'buttons',
       title: 'Buttons',
       type: 'array',
-      of: [{ type: 'button' }],
+      of: [defineArrayMember({ type: 'button' })],
     }),
   ],
   preview: {

@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaCubes as icon } from 'react-icons/fa6';
 import components from './components';
 
@@ -20,7 +20,7 @@ export default defineType({
       type: 'array',
       of: components
         .filter((c) => c.name !== 'componentSetReference')
-        .map((c) => ({ type: c.name })),
+        .map((c) => defineArrayMember({ type: c.name })),
     }),
   ],
   preview: {

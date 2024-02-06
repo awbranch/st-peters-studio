@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaBars } from 'react-icons/fa6';
 import { FaLink } from 'react-icons/fa';
 
@@ -47,7 +47,7 @@ export default defineType({
       name: 'menu',
       title: 'Menu',
       type: 'array',
-      of: [{ type: 'link' }],
+      of: [defineArrayMember({ type: 'link' })],
       hidden: ({ parent }) => !(parent?.action === 'menu'),
     }),
   ],

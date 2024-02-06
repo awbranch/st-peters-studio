@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaQuestionCircle as icon } from 'react-icons/fa';
 import { createRichTextBlock } from './utils';
 
@@ -18,7 +18,11 @@ export default defineType({
       name: 'answer',
       title: 'Answer',
       type: 'array',
-      of: [createRichTextBlock(['lists', 'decorators', 'links', 'textColor'])],
+      of: [
+        defineArrayMember(
+          createRichTextBlock(['lists', 'decorators', 'links', 'textColor']),
+        ),
+      ],
       validation: (Rule: any) => Rule.required(),
     }),
   ],

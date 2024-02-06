@@ -14,13 +14,13 @@ export default defineType({
       name: 'categories',
       type: 'array',
       of: [
-        {
+        defineArrayMember({
           type: 'reference',
           to: [{ type: 'newsCategory' }],
           options: {
             disableNew: true,
           },
-        },
+        }),
       ],
     }),
     defineField({
@@ -73,9 +73,9 @@ export default defineType({
       title: 'Text',
       type: 'array',
       of: [
-        createRichTextBlock(),
-        createImageField('image', 'Image'),
-        { type: 'buttonRow' },
+        defineArrayMember(createRichTextBlock()),
+        defineArrayMember(createImageField('image', 'Image')),
+        defineArrayMember({ type: 'buttonRow' }),
       ],
       validation: (Rule: any) => Rule.required(),
     }),

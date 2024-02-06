@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaUsers as icon } from 'react-icons/fa';
 
 export default defineType({
@@ -12,7 +12,7 @@ export default defineType({
       name: 'members',
       title: 'Members',
       type: 'array',
-      of: [{ type: 'teamGridMember' }],
+      of: [defineArrayMember({ type: 'teamGridMember' })],
     }),
   ],
   preview: {

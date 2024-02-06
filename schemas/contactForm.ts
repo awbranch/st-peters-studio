@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaRegWindowMaximize as icon } from 'react-icons/fa';
 
 export default defineType({
@@ -18,7 +18,7 @@ export default defineType({
       name: 'subjects',
       title: 'Subjects',
       type: 'array',
-      of: [{ type: 'contactFormSubject' }],
+      of: [defineArrayMember({ type: 'contactFormSubject' })],
     }),
   ],
   preview: {

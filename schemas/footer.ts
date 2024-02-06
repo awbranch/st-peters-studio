@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaWindowMinimize as icon } from 'react-icons/fa';
 
 export default defineType({
@@ -41,7 +41,7 @@ export default defineType({
       title: 'Past Newsletters',
       type: 'array',
       of: [
-        {
+        defineArrayMember({
           type: 'block',
           styles: [{ title: 'Small', value: 'h6' }],
           lists: [],
@@ -51,7 +51,7 @@ export default defineType({
               { title: 'Italic', value: 'em' },
             ],
           },
-        },
+        }),
       ],
       validation: (Rule) => Rule.required(),
       group: 'newsletter',

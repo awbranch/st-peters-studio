@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaBoltLightning as icon } from 'react-icons/fa6';
 import {
   createImageField,
@@ -31,7 +31,9 @@ export default defineType({
       name: 'text',
       title: 'Text',
       type: 'array',
-      of: [createRichTextBlock(['h1', 'decorators', 'links'])],
+      of: [
+        defineArrayMember(createRichTextBlock(['h1', 'decorators', 'links'])),
+      ],
     }),
     createImageField('image', 'Image'),
     defineField({

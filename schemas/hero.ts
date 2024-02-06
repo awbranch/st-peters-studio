@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import {
   createImageField,
   createRichTextBlock,
@@ -26,7 +26,7 @@ export default defineType({
       name: 'buttons',
       title: 'Buttons',
       type: 'array',
-      of: [{ type: 'button' }],
+      of: [defineArrayMember({ type: 'button' })],
     }),
   ],
   preview: {

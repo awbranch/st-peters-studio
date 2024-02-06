@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaImages as icon } from 'react-icons/fa6';
 
 export default defineType({
@@ -12,7 +12,7 @@ export default defineType({
       name: 'images',
       title: 'Images',
       type: 'array',
-      of: [{ type: 'imageTile' }],
+      of: [defineArrayMember({ type: 'imageTile' })],
     }),
   ],
   preview: {

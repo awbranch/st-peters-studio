@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaQuestionCircle as icon } from 'react-icons/fa';
 
 export default defineType({
@@ -12,7 +12,7 @@ export default defineType({
       name: 'faqs',
       title: 'FAQs',
       type: 'array',
-      of: [{ type: 'faq' }],
+      of: [defineArrayMember({ type: 'faq' })],
     }),
   ],
   preview: {

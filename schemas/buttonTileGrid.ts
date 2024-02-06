@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaTableCells as icon } from 'react-icons/fa6';
 
 export default defineType({
@@ -12,7 +12,7 @@ export default defineType({
       name: 'buttons',
       title: 'Buttons',
       type: 'array',
-      of: [{ type: 'buttonTile' }],
+      of: [defineArrayMember({ type: 'buttonTile' })],
     }),
   ],
   preview: {

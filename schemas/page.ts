@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaFile as icon } from 'react-icons/fa';
 
 const pageWidths = [
@@ -71,7 +71,7 @@ export default defineType({
       name: 'blocks',
       title: 'Blocks',
       type: 'array',
-      of: [{ type: 'pageBlock' }],
+      of: [defineArrayMember({ type: 'pageBlock' })],
     }),
   ],
   preview: {

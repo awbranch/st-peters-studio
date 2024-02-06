@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { createRichTextBlock, getFirstBlockText } from './utils';
 import { FaAlignJustify as icon } from 'react-icons/fa6';
 
@@ -30,14 +30,16 @@ export default defineType({
       title: 'Text',
       type: 'array',
       of: [
-        createRichTextBlock([
-          'h1',
-          'subtitle',
-          'small',
-          'decorators',
-          'links',
-          'textColor',
-        ]),
+        defineArrayMember(
+          createRichTextBlock([
+            'h1',
+            'subtitle',
+            'small',
+            'decorators',
+            'links',
+            'textColor',
+          ]),
+        ),
       ],
     }),
   ],
