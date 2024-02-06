@@ -1,6 +1,7 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaNewspaper as icon } from 'react-icons/fa6';
 import { createImageField, createRichTextBlock } from './utils';
+import components from './components';
 
 export default defineType({
   name: 'newsStory',
@@ -79,8 +80,18 @@ export default defineType({
       validation: (Rule: any) => Rule.required(),
     }),
     defineField({
+      name: 'components',
+      title: 'Additional Components',
+      type: 'array',
+      description:
+        'Additional components to append to the bottom of the article.',
+      of: components.map((c) => defineArrayMember({ type: c.name })),
+    }),
+    defineField({
       name: 'blocks',
       title: 'Additional Blocks',
+      description:
+        'Additional blocks to append to the bottom of the article and additional components.',
       type: 'array',
       of: [{ type: 'pageBlock' }],
     }),

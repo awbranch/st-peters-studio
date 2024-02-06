@@ -1,4 +1,5 @@
 import article from './article';
+import buttonRow from './buttonRow';
 import buttonTileGrid from './buttonTileGrid';
 import callToAction from './callToAction';
 import callToActionList from './callToActionList';
@@ -21,6 +22,7 @@ import volunteerForm from './volunteerForm';
 
 const components = [
   article,
+  buttonRow,
   buttonTileGrid,
   callToAction,
   callToActionList,

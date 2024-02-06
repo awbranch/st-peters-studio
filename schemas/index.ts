@@ -9,7 +9,6 @@ import action from './action';
 import address from './address';
 import bookmark from './bookmark';
 import button from './button';
-import buttonRow from './buttonRow';
 import buttonTile from './buttonTile';
 import contactFormSubject from './contactFormSubject';
 import callToActionListItem from './callToActionListItem';
@@ -40,7 +39,6 @@ export const schemaTypes = [
   address,
   bookmark,
   button,
-  buttonRow,
   buttonTile,
   contactFormSubject,
   callToActionListItem,

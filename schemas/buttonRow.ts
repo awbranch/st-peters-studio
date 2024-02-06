@@ -31,10 +31,11 @@ export default defineType({
     }),
   ],
   preview: {
-    select: {},
-    prepare() {
+    select: { buttons: 'buttons' },
+    prepare({ buttons }) {
       return {
         title: 'Button Row',
+        subtitle: buttons?.length && `${buttons.length} Buttons`,
         media: icon,
       };
     },
