@@ -1,5 +1,5 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { createRichTextBlock } from './utils';
+import { createPaletteField, createRichTextBlock } from './utils';
 import { FaWindowMaximize as icon } from 'react-icons/fa';
 
 export default defineType({
@@ -32,14 +32,7 @@ export default defineType({
       hidden: ({ document }) => !document?.showNotification,
       group: 'notification',
     }),
-    defineField({
-      name: 'notificationBackground',
-      title: 'Notification Background',
-      type: 'simplerColor',
-      description:
-        'The background color for the bar, if not set it defaults to black.',
-      group: 'notification',
-    }),
+    createPaletteField('notificationPalette', 'Notification Palette'),
     defineField({
       name: 'logo',
       title: 'Logo',

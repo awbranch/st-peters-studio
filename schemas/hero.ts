@@ -18,7 +18,7 @@ export default defineType({
       name: 'text',
       title: 'Text',
       type: 'array',
-      of: [createRichTextBlock(['h1', 'decorators', 'links', 'textColor'])],
+      of: [createRichTextBlock(['h1', 'decorators', 'links'])],
       validation: (Rule: any) => Rule.required(),
     }),
     createImageField('image', 'Image'),

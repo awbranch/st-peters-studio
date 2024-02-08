@@ -24,7 +24,6 @@
     "sanity": "^3.27.1",
     "sanity-plugin-media": "^2.2.5",
     "sanity-plugin-note-field": "^2.0.2",
-    "sanity-plugin-simpler-color-input": "^2.1.0",
     "styled-components": "^6.0.7"
   },
   "devDependencies": {

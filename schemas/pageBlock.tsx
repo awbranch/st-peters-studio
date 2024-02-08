@@ -1,7 +1,8 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { userColorList } from './globals';
 import BlockPreview from './BlockPreview';
 import components from './components';
+import { createPaletteField } from './utils';
+import { colorPalettes } from './globals';
 
 export default defineType({
   name: 'pageBlock',
@@ -15,14 +16,7 @@ export default defineType({
       description: 'Id of this block in the page.',
       validation: (Rule: any) => Rule.required(),
     }),
-    defineField({
-      name: 'background',
-      title: 'Background',
-      type: 'simplerColor',
-      options: {
-        colorList: userColorList,
-      },
-    }),
+    createPaletteField('palette', 'Palette'),
     defineField({
       name: 'components',
       title: 'Components',
@@ -31,12 +25,19 @@ export default defineType({
     }),
   ],
   preview: {
-    select: { id: 'id', background: 'background', components: 'components' },
-    prepare({ id, background, components }) {
+    select: { id: 'id', palette: 'palette', components: 'components' },
+    prepare({ id, palette, components }) {
       return {
         title: `#${id?.current}`,
         subtitle: `${components?.length || '0'} components`,
-        media: <BlockPreview color={background?.value} />,
+        media: (
+          <BlockPreview
+            color={
+              palette &&
+              colorPalettes.find((p) => p.value === palette)?.background
+            }
+          />
+        ),
       };
     },
   },

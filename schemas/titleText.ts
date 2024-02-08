@@ -37,7 +37,6 @@ export default defineType({
             'small',
             'decorators',
             'links',
-            'textColor',
           ]),
         ),
       ],

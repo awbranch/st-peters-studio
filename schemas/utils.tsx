@@ -5,6 +5,9 @@ import {
   defineField,
   PortableTextBlock,
 } from 'sanity';
+import { MdFormatColorText } from 'react-icons/md';
+
+import { colorPalettes } from './globals';
 
 export function createImageField(name: string, title: string, group?: string) {
   return defineField({
@@ -36,8 +39,7 @@ export type CRTLevel =
   | 'blockquote'
   | 'lists'
   | 'decorators'
-  | 'links'
-  | 'textColor';
+  | 'links';
 
 export function createRichTextBlock(levels: Array<CRTLevel> = ['all']) {
   const styles: BlockStyleDefinition[] = [];
@@ -91,6 +93,14 @@ export function createRichTextBlock(levels: Array<CRTLevel> = ['all']) {
       ...[
         { title: 'Bold', value: 'strong' },
         { title: 'Italic', value: 'em' },
+        {
+          title: 'Accent Color',
+          value: 'accent',
+          icon: MdFormatColorText,
+          component: ({ children }: any) => (
+            <span style={{ color: '#db2777' }}>{children}</span>
+          ),
+        },
       ],
     );
   }
@@ -114,10 +124,6 @@ export function createRichTextBlock(levels: Array<CRTLevel> = ['all']) {
     });
   }
 
-  if (levels.includes('all') || levels.includes('textColor')) {
-    annotations.push({ type: 'textColor' });
-  }
-
   return {
     type: 'block',
     styles,
@@ -135,4 +141,22 @@ export function getFirstBlockText(portableText: PortableTextBlock[]): string {
     .filter((child: any) => child?._type === 'span')
     .map((span: any) => span?.text)
     .join('');
+}
+
+export function createPaletteField(
+  name: string,
+  title: string,
+  group?: string,
+) {
+  return defineField({
+    name,
+    title,
+    group,
+    type: 'string',
+    options: {
+      list: colorPalettes.map((c) => ({ title: c.title, value: c.value })),
+      layout: 'dropdown',
+    },
+    validation: (Rule: any) => Rule.required(),
+  });
 }

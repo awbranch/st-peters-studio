@@ -1,8 +1,22 @@
-export const userColorList = [
-  { label: 'green', value: '#14532d' },
-  { label: 'blue', value: '#1766b5' },
-  { label: 'pink', value: '#db2777' },
-  { label: 'black', value: '#111827' },
-  { label: 'white', value: '#ffffff' },
-  { label: 'gray', value: '#f3f4f6' },
+export const colorPalettes = [
+  {
+    title: 'White: A white background with black text',
+    value: 'white',
+    background: '#ffffff',
+  },
+  {
+    title: 'Pink: A pink background with white text.',
+    value: 'highlight',
+    background: '#db2777',
+  },
+  {
+    title: 'Gray: A light gray background with black text.',
+    value: 'gray',
+    background: '#f3f4f6',
+  },
+  {
+    title: 'Black: A dark gray background with white text.',
+    value: 'black',
+    background: '#111827',
+  },
 ];

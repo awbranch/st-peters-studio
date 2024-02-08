@@ -20,7 +20,7 @@ export default defineType({
       type: 'array',
       of: [
         defineArrayMember(
-          createRichTextBlock(['lists', 'decorators', 'links', 'textColor']),
+          createRichTextBlock(['lists', 'decorators', 'links']),
         ),
       ],
       validation: (Rule: any) => Rule.required(),

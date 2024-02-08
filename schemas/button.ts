@@ -1,6 +1,5 @@
 import { defineField, defineType } from 'sanity';
 import { FaRegHandPointer as icon } from 'react-icons/fa';
-import { userColorList } from './globals';
 
 export default defineType({
   name: 'button',
@@ -8,30 +7,19 @@ export default defineType({
   type: 'object',
   fields: [
     defineField({
-      name: 'color',
-      title: 'Color',
-      type: 'simplerColor',
-      validation: (Rule: any) => Rule.required(),
-      initialValue: 'pink',
-      options: {
-        colorList: userColorList,
-      },
-    }),
-    defineField({
-      name: 'variant',
-      title: 'Variant',
+      name: 'style',
+      title: 'Style',
       type: 'string',
       options: {
         list: [
-          { title: 'Solid', value: 'solid' },
-          { title: 'Outline', value: 'outline' },
+          { title: 'Primary', value: 'primary' },
+          { title: 'Secondary', value: 'secondary' },
         ],
         layout: 'radio',
         direction: 'horizontal',
       },
       validation: (Rule: any) => Rule.required(),
     }),
-
     defineField({
       name: 'icon',
       title: 'Icon',
@@ -65,10 +53,11 @@ export default defineType({
     select: {
       label: 'label',
       link: 'link',
+      style: 'style',
     },
-    prepare({ label, link }) {
+    prepare({ label, link, style }) {
       return {
-        title: label,
+        title: `${label || ''} - (${style || ''})`,
         subtitle: link,
         icon: icon,
       };
