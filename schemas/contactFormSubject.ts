@@ -8,6 +8,13 @@ export default defineType({
   icon,
   fields: [
     defineField({
+      name: 'id',
+      title: 'ID',
+      type: 'slug',
+      description: 'Id of this contact item.',
+      validation: (Rule: any) => Rule.required(),
+    }),
+    defineField({
       name: 'name',
       title: 'Name',
       type: 'string',
@@ -21,14 +28,29 @@ export default defineType({
       type: 'string',
       validation: (Rule: any) => Rule.required(),
     }),
+    defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alternate Text',
+          type: 'string',
+        }),
+      ],
+    }),
   ],
   preview: {
-    select: { name: 'name', emailTo: 'emailTo' },
-    prepare({ name, emailTo }) {
+    select: { name: 'name', id: 'id.current', image: 'image' },
+    prepare({ name, id, image }) {
       return {
         title: name,
-        subtitle: emailTo,
-        media: icon,
+        subtitle: id,
+        media: image || icon,
       };
     },
   },

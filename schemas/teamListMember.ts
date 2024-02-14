@@ -32,7 +32,7 @@ export default defineType({
       title: 'Email',
       type: 'string',
       description:
-        'Only add the staff1 member\'s email if you want to show the "contact" button under their bio.',
+        'A better option may be to add a contact link to keep the employees internal email from being available to bots.',
     }),
     defineField({
       name: 'twitterUrl',
@@ -43,6 +43,13 @@ export default defineType({
       name: 'linkedInUrl',
       title: 'LinkedIn URL',
       type: 'url',
+    }),
+    defineField({
+      name: 'contact',
+      title: 'Contact Link',
+      type: 'string',
+      description:
+        'Add the link to the contact form to reach them e.g. /contact?subject=maintenance',
     }),
   ],
   preview: {
