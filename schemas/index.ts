@@ -13,6 +13,7 @@ import buttonTile from './buttonTile';
 import contactFormSubject from './contactFormSubject';
 import callToActionListItem from './callToActionListItem';
 import documentListItem from './documentListItem';
+import emailTemplate from './emailTemplate';
 import faq from './faq';
 import iconListItem from './iconListItem';
 import imageTile from './imageTile';
@@ -43,6 +44,7 @@ export const schemaTypes = [
   contactFormSubject,
   callToActionListItem,
   documentListItem,
+  emailTemplate,
   faq,
   iconListItem,
   imageTile,
