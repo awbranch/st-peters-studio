@@ -20,6 +20,22 @@ export default defineType({
       type: 'array',
       of: [defineArrayMember({ type: 'contactFormSubject' })],
     }),
+    defineField({
+      name: 'confSubject',
+      title: 'Confirmation Email Subject',
+      type: 'string',
+      description:
+        'Subject for the email that will be sent out confirming the receipt of the message.',
+      validation: (Rule: any) => Rule.required(),
+    }),
+    defineField({
+      name: 'confTemplate',
+      title: 'Confirmation Email Template',
+      type: 'text',
+      description:
+        'Template for the email that will be sent out confirming the receipt of the message. Keywords: {{firstName}} {{lastName}}.',
+      validation: (Rule: any) => Rule.required(),
+    }),
   ],
   preview: {
     select: { subjects: 'subjects' },
