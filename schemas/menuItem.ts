@@ -35,8 +35,8 @@ export default defineType({
       title: 'Link',
       type: 'string',
       hidden: ({ parent }) => !(parent?.action === 'link'),
-      validation: (Rule) =>
-        Rule.custom((url, { parent }: any) => {
+      validation: (Rule: any) =>
+        Rule.custom((url: any, { parent }: any) => {
           if (!url && parent.action === 'link') {
             return 'Required when Action is "Go to Link"';
           }

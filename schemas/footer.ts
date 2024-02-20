@@ -1,4 +1,4 @@
-import { defineArrayMember, defineField, defineType } from 'sanity';
+import { defineField, defineType } from 'sanity';
 import { FaWindowMinimize as icon } from 'react-icons/fa';
 
 export default defineType({
@@ -16,8 +16,8 @@ export default defineType({
       title: 'Logo',
     },
     {
-      name: 'address',
-      title: 'Address',
+      name: 'contact',
+      title: 'Contact',
     },
     {
       name: 'social',
@@ -30,38 +30,24 @@ export default defineType({
   ],
   fields: [
     defineField({
-      name: 'newsletterSignupTitle',
+      name: 'newsletterTitle',
       title: 'Newsletter Signup Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
       group: 'newsletter',
     }),
     defineField({
-      name: 'pastNewslettersMessage',
-      title: 'Past Newsletters',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'block',
-          styles: [{ title: 'Small', value: 'h6' }],
-          lists: [],
-          marks: {
-            decorators: [
-              { title: 'Bold', value: 'strong' },
-              { title: 'Italic', value: 'em' },
-            ],
-          },
-        }),
-      ],
+      name: 'newsletterText',
+      title: 'Newsletter Signup Text',
+      type: 'string',
       validation: (Rule) => Rule.required(),
       group: 'newsletter',
     }),
     defineField({
-      name: 'newsletterConfig',
-      title: 'Newsletter Configuration',
-      type: 'text',
-      rows: 10,
-      validation: (Rule: any) => Rule.required(),
+      name: 'newsletterUrl',
+      title: 'Newsletter Signup Link',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
       group: 'newsletter',
     }),
     defineField({
@@ -72,17 +58,35 @@ export default defineType({
       group: 'logo',
     }),
     defineField({
-      name: 'address',
-      title: 'Address',
-      type: 'address',
-      validation: (Rule) => Rule.required(),
-      group: 'address',
+      name: 'contactPhone',
+      title: 'Contact Phone',
+      type: 'string',
+      group: 'contact',
+    }),
+    defineField({
+      name: 'contactEmail',
+      title: 'Contact Email',
+      type: 'string',
+      group: 'contact',
+    }),
+    defineField({
+      name: 'streetAddress',
+      title: 'Street Address',
+      type: 'text',
+      group: 'contact',
+    }),
+    defineField({
+      name: 'mailingAddress',
+      title: 'Mailing Address',
+      type: 'text',
+      group: 'contact',
     }),
     defineField({
       name: 'socialTitle',
       title: 'Social Title',
       type: 'string',
       group: 'social',
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: 'social',
@@ -90,6 +94,7 @@ export default defineType({
       type: 'array',
       of: [{ type: 'social' }],
       group: 'social',
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: 'siteMap',
@@ -97,6 +102,7 @@ export default defineType({
       type: 'array',
       of: [{ type: 'link' }],
       group: 'sitemap',
+      validation: (Rule: any) => Rule.required(),
     }),
   ],
   preview: {

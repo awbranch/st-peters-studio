@@ -6,7 +6,6 @@ import components from './components';
 import componentSet from './componentSet';
 
 import action from './action';
-import address from './address';
 import bookmark from './bookmark';
 import button from './button';
 import buttonTile from './buttonTile';
@@ -36,7 +35,6 @@ export const schemaTypes = [
   ...components,
   componentSet,
   action,
-  address,
   bookmark,
   button,
   buttonTile,

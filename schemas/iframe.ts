@@ -10,7 +10,7 @@ export default defineType({
   fields: [
     defineField({
       name: 'code',
-      title: 'Code',
+      title: 'Embed Code',
       type: 'text',
       validation: (Rule: any) => Rule.required(),
     }),
