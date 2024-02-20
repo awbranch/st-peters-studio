@@ -22,6 +22,7 @@ export default defineType({
         createImageField('image', 'Image'),
         { type: 'buttonRow' },
         { type: 'bookmark' },
+        { type: 'youTubeVideo' },
       ],
     }),
   ],

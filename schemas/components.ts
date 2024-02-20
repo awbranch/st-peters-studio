@@ -19,6 +19,7 @@ import teamGrid from './teamGrid';
 import teamList from './teamList';
 import titleText from './titleText';
 import volunteerForm from './volunteerForm';
+import youTubeVideo from './youTubeVideo';
 
 const components = [
   article,
@@ -42,6 +43,7 @@ const components = [
   teamList,
   titleText,
   volunteerForm,
+  youTubeVideo,
 ];
 
 export default components;
