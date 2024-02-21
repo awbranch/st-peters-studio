@@ -23,7 +23,15 @@ export function createImageField(name: string, title: string, group?: string) {
         name: 'alt',
         title: 'Alternate Text',
         type: 'string',
+        description:
+          'Descriptive text for visually impared users using screen readers.',
         validation: (Rule: any) => Rule.required(),
+      }),
+      defineField({
+        name: 'caption',
+        title: 'Caption',
+        description: 'Optional text to appear below the image.',
+        type: 'string',
       }),
     ],
     validation: (Rule: any) => Rule.required(),
