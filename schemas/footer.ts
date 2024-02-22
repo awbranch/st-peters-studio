@@ -30,15 +30,8 @@ export default defineType({
   ],
   fields: [
     defineField({
-      name: 'newsletterTitle',
-      title: 'Newsletter Signup Title',
-      type: 'string',
-      validation: (Rule: any) => Rule.required(),
-      group: 'newsletter',
-    }),
-    defineField({
-      name: 'newsletterText',
-      title: 'Newsletter Signup Text',
+      name: 'newsletterLabel',
+      title: 'Newsletter Label',
       type: 'string',
       validation: (Rule: any) => Rule.required(),
       group: 'newsletter',

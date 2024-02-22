@@ -4,6 +4,7 @@ import { visionTool } from '@sanity/vision';
 import { media } from 'sanity-plugin-media';
 import { noteField } from 'sanity-plugin-note-field';
 import { schemaTypes } from './schemas';
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
 
 const singletons: { [key: string]: string } = {
   settings: '43e2d671-9f4d-4c59-9e2f-b9787c07cd88',
@@ -45,6 +46,7 @@ export default defineConfig({
     visionTool(),
     media(),
     noteField(),
+    vercelDeployTool(),
   ],
 
   schema: {
