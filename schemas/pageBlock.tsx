@@ -16,6 +16,15 @@ export default defineType({
       description: 'Id of this block in the page.',
       validation: (Rule: any) => Rule.required(),
     }),
+    defineField({
+      name: 'hidden',
+      title: 'Hidden',
+      type: 'boolean',
+      description:
+        'You can hide a block rather than deleting if if you want to not show it temporarily',
+      initialValue: false,
+      validation: (Rule: any) => Rule.required(),
+    }),
     createPaletteField('palette', 'Palette'),
     defineField({
       name: 'components',
@@ -25,17 +34,25 @@ export default defineType({
     }),
   ],
   preview: {
-    select: { id: 'id', palette: 'palette', components: 'components' },
-    prepare({ id, palette, components }) {
+    select: {
+      id: 'id',
+      hidden: 'hidden',
+      palette: 'palette',
+      components: 'components',
+    },
+    prepare({ id, hidden, palette, components }) {
       return {
         title: `#${id?.current}`,
-        subtitle: `${components?.length || '0'} components`,
+        subtitle: hidden ? 'hidden' : `${components?.length || '0'} components`,
         media: (
           <BlockPreview
             color={
-              palette &&
-              colorPalettes.find((p) => p.value === palette)?.background
+              hidden
+                ? 'white'
+                : palette &&
+                  colorPalettes.find((p) => p.value === palette)?.background
             }
+            dashed={hidden}
           />
         ),
       };

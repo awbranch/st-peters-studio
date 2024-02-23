@@ -49,13 +49,6 @@ export default defineType({
         'The page title to be shown in the browser tab and used for SEO.',
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-      description:
-        'A concise summary of the pages content for search engine results and user previews.',
-    }),
-    defineField({
       title: 'Max Width',
       name: 'maxWidth',
       type: 'string',
@@ -72,6 +65,13 @@ export default defineType({
       title: 'Blocks',
       type: 'array',
       of: [defineArrayMember({ type: 'pageBlock' })],
+    }),
+    defineField({
+      name: 'description',
+      title: 'Search Engine Description',
+      type: 'text',
+      description:
+        'This description is not displayed to the user. Instead this is a concise summary of the pages for search engines to help index the page.',
     }),
   ],
   preview: {

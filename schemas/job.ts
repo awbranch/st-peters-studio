@@ -36,5 +36,24 @@ export default defineType({
       type: 'url',
       validation: (Rule: any) => Rule.required(),
     }),
+    defineField({
+      name: 'hidden',
+      title: 'Hidden',
+      type: 'boolean',
+      description:
+        'You can hide this job posting rather than deleting if if you want to not show it temporarily',
+      initialValue: false,
+      validation: (Rule: any) => Rule.required(),
+    }),
   ],
+  preview: {
+    select: { title: 'title', hidden: 'hidden' },
+    prepare({ title, hidden }) {
+      return {
+        title: title,
+        subtitle: hidden ? 'hidden' : null,
+        media: icon,
+      };
+    },
+  },
 });
