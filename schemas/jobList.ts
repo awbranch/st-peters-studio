@@ -1,5 +1,4 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { createImageField } from './utils';
 import { FaPersonDigging as icon } from 'react-icons/fa6';
 
 export default defineType({
@@ -9,7 +8,6 @@ export default defineType({
   icon,
   description: 'A lost of job openings.',
   fields: [
-    createImageField('image', 'Image'),
     defineField({
       name: 'jobs',
       title: 'Jobs',
@@ -32,8 +30,21 @@ export default defineType({
   preview: {
     select: { jobs: 'jobs' },
     prepare({ jobs }) {
+      let visibleJobs = 0;
+      let hiddenJobs = 0;
+      if (jobs) {
+        jobs.forEach((j: { hidden: boolean }) => {
+          if (j.hidden) {
+            hiddenJobs++;
+          } else {
+            visibleJobs++;
+          }
+        });
+      }
+
       return {
-        title: jobs !== undefined ? `${jobs?.length} Jobs` : 'Job List',
+        title: `${visibleJobs} Jobs`,
+        subtitle: hiddenJobs > 0 ? `${hiddenJobs} Hidden Jobs` : '',
         media: icon,
       };
     },

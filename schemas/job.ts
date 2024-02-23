@@ -48,10 +48,10 @@ export default defineType({
   ],
   preview: {
     select: { title: 'title', hidden: 'hidden' },
-    prepare({ title, hidden }) {
+    prepare({ hidden, title }) {
       return {
         title: title,
-        subtitle: hidden ? 'hidden' : null,
+        subtitle: hidden ? 'hidden' : '',
         media: icon,
       };
     },
