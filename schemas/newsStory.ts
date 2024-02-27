@@ -76,6 +76,8 @@ export default defineType({
         defineArrayMember(createRichTextBlock()),
         defineArrayMember(createImageField('image', 'Image')),
         defineArrayMember({ type: 'buttonRow' }),
+        defineArrayMember({ type: 'youTubeVideo' }),
+        defineArrayMember({ type: 'bookmark' }),
       ],
       validation: (Rule: any) => Rule.required(),
     }),
