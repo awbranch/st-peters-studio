@@ -59,6 +59,14 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'hidden',
+      title: 'Hidden',
+      type: 'boolean',
+      description:
+        'You can hide a news story rather than deleting if if you want to not show it temporarily',
+      initialValue: false,
+    }),
+    defineField({
       name: 'summary',
       title: 'Summary',
       type: 'text',
