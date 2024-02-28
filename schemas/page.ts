@@ -20,8 +20,8 @@ export default defineType({
       type: 'string',
       description:
         'The relative path to this page, it should be unique and start with a slash.',
-      validation: (Rule: any) =>
-        Rule.required().custom((path: string, context: any) => {
+      validation: (rule: any) =>
+        rule.required().custom((path: string, context: any) => {
           if (!/^\/[a-z-]*(?:\/[a-z-]+)*$/.test(path)) {
             return 'Paths must start with a forward slash and contain one or more path segments containing lower case letters or dashes, separated by forward slashes.';
           }
@@ -58,7 +58,7 @@ export default defineType({
         layout: 'radio',
         direction: 'horizontal',
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'blocks',

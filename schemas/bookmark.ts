@@ -13,7 +13,7 @@ export default defineType({
       title: 'ID',
       type: 'slug',
       description: 'Id of this block in the page.',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {

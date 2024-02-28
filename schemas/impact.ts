@@ -11,14 +11,14 @@ export default defineType({
       title: 'Category',
       type: 'string',
       description: 'The type of impact, e.g. lunches served, hours volunteered',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'value',
       title: 'Value',
       type: 'number',
       description: 'A number that quantifies the impact.',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {

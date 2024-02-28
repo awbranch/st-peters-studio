@@ -37,13 +37,13 @@ export default defineType({
       name: 'logo',
       title: 'Logo',
       type: 'image',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
       fields: [
         defineField({
           name: 'alt',
           title: 'Alternate Text',
           type: 'string',
-          validation: (Rule: any) => Rule.required(),
+          validation: (rule: any) => rule.required(),
         }),
       ],
       group: 'navigation',
@@ -57,7 +57,7 @@ export default defineType({
           name: 'alt',
           title: 'Alternate Text',
           type: 'string',
-          validation: (Rule: any) => Rule.required(),
+          validation: (rule: any) => rule.required(),
         }),
       ],
       group: 'navigation',
@@ -75,7 +75,7 @@ export default defineType({
       type: 'array',
       of: [defineArrayMember({ type: 'button' })],
       group: 'navigation',
-      validation: (Rule: any) => Rule.max(1),
+      validation: (rule: any) => rule.max(1),
     }),
   ],
   preview: {

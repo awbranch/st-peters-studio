@@ -30,19 +30,19 @@ export default defineType({
       options: {
         dateFormat: 'MM/DD/YYYY',
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
       options: {
         source: (doc: any): any => {
           if (
@@ -72,7 +72,7 @@ export default defineType({
       type: 'text',
       description:
         'A short summary that appears with the preview image on the news summary page.',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     createImageField('previewImage', 'Preview Image'),
 
@@ -87,7 +87,7 @@ export default defineType({
         defineArrayMember({ type: 'youTubeVideo' }),
         defineArrayMember({ type: 'bookmark' }),
       ],
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'components',
@@ -110,10 +110,15 @@ export default defineType({
     select: {
       title: 'title',
       date: 'date',
+      hidden: 'hidden',
     },
-    prepare({ title, date }) {
+    prepare({ title, date, hidden }) {
       const parts = date.split('-');
-      const subtitle = `${parts[1]}/${parts[2]}/${parts[0]}`;
+      let subtitle = `${parts[1]}/${parts[2]}/${parts[0]}`;
+      if (hidden) {
+        subtitle += ' - hidden';
+      }
+
       return {
         title,
         subtitle,

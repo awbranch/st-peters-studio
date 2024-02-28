@@ -23,7 +23,7 @@ export default defineType({
         layout: 'radio',
         direction: 'horizontal',
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'text',

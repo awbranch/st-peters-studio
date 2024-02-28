@@ -18,13 +18,13 @@ export default defineType({
       name: 'eooStatement',
       title: 'EEO Statement',
       type: 'text',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'noOpenings',
       title: 'No Job Openings',
       type: 'text',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {

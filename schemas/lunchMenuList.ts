@@ -15,7 +15,7 @@ export default defineType({
       type: 'string',
       description:
         'Message to display when a days menu has not been decided yet.',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {

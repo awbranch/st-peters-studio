@@ -33,21 +33,21 @@ export default defineType({
       name: 'newsletterLabel',
       title: 'Newsletter Label',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
       group: 'newsletter',
     }),
     defineField({
       name: 'newsletterUrl',
       title: 'Newsletter Signup Link',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
       group: 'newsletter',
     }),
     defineField({
       name: 'logo',
       title: 'Logo',
       type: 'image',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
       group: 'logo',
     }),
     defineField({
@@ -79,7 +79,7 @@ export default defineType({
       title: 'Social Title',
       type: 'string',
       group: 'social',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'social',
@@ -87,7 +87,7 @@ export default defineType({
       type: 'array',
       of: [{ type: 'social' }],
       group: 'social',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'siteMap',
@@ -95,7 +95,7 @@ export default defineType({
       type: 'array',
       of: [{ type: 'link' }],
       group: 'sitemap',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {

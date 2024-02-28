@@ -12,7 +12,7 @@ export default defineType({
       name: 'code',
       title: 'Embed Code',
       type: 'text',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {

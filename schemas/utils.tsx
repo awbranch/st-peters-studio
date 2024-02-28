@@ -25,7 +25,7 @@ export function createImageField(name: string, title: string, group?: string) {
         type: 'string',
         description:
           'Descriptive text for visually impared users using screen readers.',
-        validation: (Rule: any) => Rule.required(),
+        validation: (rule: any) => rule.required(),
       }),
       defineField({
         name: 'caption',
@@ -34,7 +34,7 @@ export function createImageField(name: string, title: string, group?: string) {
         type: 'string',
       }),
     ],
-    validation: (Rule: any) => Rule.required(),
+    validation: (rule: any) => rule.required(),
   });
 }
 
@@ -122,8 +122,8 @@ export function createRichTextBlock(levels: Array<CRTLevel> = ['all']) {
         {
           name: 'href',
           type: 'url',
-          validation: (Rule: any) =>
-            Rule.uri({
+          validation: (rule: any) =>
+            rule.uri({
               allowRelative: true,
               scheme: ['http', 'https', 'mailto', 'tel'],
             }),
@@ -165,6 +165,6 @@ export function createPaletteField(
       list: colorPalettes.map((c) => ({ title: c.title, value: c.value })),
       layout: 'dropdown',
     },
-    validation: (Rule: any) => Rule.required(),
+    validation: (rule: any) => rule.required(),
   });
 }

@@ -14,7 +14,7 @@ export default defineType({
       title: 'ID',
       type: 'slug',
       description: 'Id of this block in the page.',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'hidden',
@@ -23,7 +23,7 @@ export default defineType({
       description:
         'You can hide a block rather than deleting if if you want to not show it temporarily',
       initialValue: false,
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     createPaletteField('palette', 'Palette'),
     defineField({

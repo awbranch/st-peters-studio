@@ -21,13 +21,13 @@ export default defineType({
         ],
         layout: 'dropdown',
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'url',
       title: 'Link',
       type: 'url',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {

@@ -12,7 +12,7 @@ export default defineType({
       name: 'question',
       title: 'Question',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'answer',
@@ -23,7 +23,7 @@ export default defineType({
           createRichTextBlock(['lists', 'decorators', 'links']),
         ),
       ],
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
 });

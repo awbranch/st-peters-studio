@@ -13,7 +13,7 @@ export default defineType({
       title: 'Sharable Component Set',
       type: 'reference',
       to: [{ type: 'componentSet' }],
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
       options: {
         disableNew: true,
       },

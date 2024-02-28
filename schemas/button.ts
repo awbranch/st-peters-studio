@@ -18,7 +18,7 @@ export default defineType({
         layout: 'radio',
         direction: 'horizontal',
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'icon',
@@ -40,13 +40,13 @@ export default defineType({
       name: 'label',
       title: 'Label',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'link',
       title: 'Link',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {

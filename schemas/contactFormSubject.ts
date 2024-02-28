@@ -12,13 +12,13 @@ export default defineType({
       title: 'ID',
       type: 'slug',
       description: 'Id of this contact item.',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'name',
       title: 'Name',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'emailTo',
@@ -26,7 +26,7 @@ export default defineType({
       description:
         'List of emails to send messages with this subject to separated by commas.',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'image',

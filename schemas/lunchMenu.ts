@@ -14,13 +14,13 @@ export default defineType({
       options: {
         dateFormat: 'MM/DD/YYYY',
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'menu',
       title: 'Menu',
       type: 'text',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {

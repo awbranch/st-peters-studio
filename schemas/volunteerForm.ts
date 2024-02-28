@@ -14,7 +14,7 @@ export default defineType({
       type: 'string',
       description:
         'The email address that is sent the volunteering form message.',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'confSubject',
@@ -22,7 +22,7 @@ export default defineType({
       type: 'string',
       description:
         'Subject for the email that will be sent out confirming the receipt of the message.',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'confTemplate',
@@ -30,7 +30,7 @@ export default defineType({
       type: 'text',
       description:
         'Template for the email that will be sent out confirming the receipt of the message. Keywords: {{firstName}} {{lastName}}.',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {

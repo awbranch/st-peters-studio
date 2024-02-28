@@ -16,7 +16,7 @@ export default defineType({
       name: 'name',
       title: 'Name',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'action',
@@ -28,15 +28,15 @@ export default defineType({
         layout: 'radio',
         direction: 'horizontal',
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'url',
       title: 'Link',
       type: 'string',
       hidden: ({ parent }) => !(parent?.action === 'link'),
-      validation: (Rule: any) =>
-        Rule.custom((url: any, { parent }: any) => {
+      validation: (rule: any) =>
+        rule.custom((url: any, { parent }: any) => {
           if (!url && parent.action === 'link') {
             return 'Required when Action is "Go to Link"';
           }

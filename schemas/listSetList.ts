@@ -16,7 +16,7 @@ export default defineType({
       name: 'list',
       title: 'List',
       type: 'text',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
 });

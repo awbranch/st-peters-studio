@@ -11,7 +11,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'subtitle',
@@ -26,7 +26,7 @@ export default defineType({
       description:
         'A short description of the job, the full job description should be in the job posting.',
       type: 'text',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'applyLink',
@@ -34,7 +34,7 @@ export default defineType({
       description:
         'A short description of the job, the full job description should be in the job posting.',
       type: 'url',
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'hidden',
@@ -43,7 +43,7 @@ export default defineType({
       description:
         'You can hide this job posting rather than deleting if if you want to not show it temporarily',
       initialValue: false,
-      validation: (Rule: any) => Rule.required(),
+      validation: (rule: any) => rule.required(),
     }),
   ],
   preview: {
