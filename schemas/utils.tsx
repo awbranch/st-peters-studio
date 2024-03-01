@@ -9,8 +9,13 @@ import { MdFormatColorText } from 'react-icons/md';
 
 import { colorPalettes } from './globals';
 
-export function createImageField(name: string, title: string, group?: string) {
-  return defineField({
+export function createImageField(
+  name: string,
+  title: string,
+  group?: string,
+  caption?: boolean,
+) {
+  const field = defineField({
     name,
     title,
     group,
@@ -24,18 +29,25 @@ export function createImageField(name: string, title: string, group?: string) {
         title: 'Alternate Text',
         type: 'string',
         description:
-          'Descriptive text for visually impared users using screen readers.',
+          'Descriptive text for visually impaired users using screen readers.',
         validation: (rule: any) => rule.required(),
       }),
+    ],
+    validation: (rule: any) => rule.required(),
+  });
+
+  if (caption && field.fields) {
+    field.fields.push(
       defineField({
         name: 'caption',
         title: 'Caption',
         description: 'Optional text to appear below the image.',
         type: 'string',
       }),
-    ],
-    validation: (rule: any) => rule.required(),
-  });
+    );
+  }
+
+  return field;
 }
 
 export type CRTLevel =

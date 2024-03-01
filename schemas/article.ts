@@ -19,7 +19,7 @@ export default defineType({
       type: 'array',
       of: [
         createRichTextBlock(),
-        createImageField('image', 'Image'),
+        createImageField('image', 'Image', undefined, true),
         { type: 'buttonRow' },
         { type: 'bookmark' },
         { type: 'youTubeVideo' },

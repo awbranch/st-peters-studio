@@ -82,7 +82,7 @@ export default defineType({
       type: 'array',
       of: [
         defineArrayMember(createRichTextBlock()),
-        defineArrayMember(createImageField('image', 'Image')),
+        defineArrayMember(createImageField('image', 'Image', undefined, true)),
         defineArrayMember({ type: 'buttonRow' }),
         defineArrayMember({ type: 'youTubeVideo' }),
         defineArrayMember({ type: 'bookmark' }),
