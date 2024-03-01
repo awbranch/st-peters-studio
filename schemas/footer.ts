@@ -57,8 +57,14 @@ export default defineType({
       group: 'contact',
     }),
     defineField({
-      name: 'contactEmail',
-      title: 'Contact Email',
+      name: 'contactFormLabel',
+      title: 'Contact Form Label',
+      type: 'string',
+      group: 'contact',
+    }),
+    defineField({
+      name: 'contactFormLink',
+      title: 'Contact Form Link',
       type: 'string',
       group: 'contact',
     }),
