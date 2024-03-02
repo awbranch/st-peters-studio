@@ -1,5 +1,6 @@
 import { defineField, defineType, defineArrayMember } from 'sanity';
 import { PiDotsThreeOutline as icon } from 'react-icons/pi';
+import { FaLightbulb } from 'react-icons/fa6';
 
 export default defineType({
   name: 'buttonRow',
@@ -8,6 +9,19 @@ export default defineType({
   icon,
   description: 'A row of buttons',
   fields: [
+    defineField({
+      title: 'Tip',
+      description:
+        'Add one or more buttons in a row where each button has a link to another page. ' +
+        'This is useful when you want to direct a user to navigate to some other ' +
+        'page in the site or on some other site.',
+      name: 'myCustomNote',
+      type: 'note',
+      options: {
+        icon: FaLightbulb,
+        tone: 'caution',
+      },
+    }),
     defineField({
       name: 'alignment',
       title: 'Alignment',

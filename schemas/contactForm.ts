@@ -1,5 +1,6 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaRegWindowMaximize as icon } from 'react-icons/fa';
+import { FaLightbulb } from 'react-icons/fa6';
 
 export default defineType({
   name: 'contactForm',
@@ -8,6 +9,17 @@ export default defineType({
   icon,
   description: 'Displays the contact form.',
   fields: [
+    defineField({
+      title: 'Tip',
+      description:
+        'A contact form can have one or more subjects that are contacted when the form is submitted.',
+      name: 'myCustomNote',
+      type: 'note',
+      options: {
+        icon: FaLightbulb,
+        tone: 'caution',
+      },
+    }),
     defineField({
       name: 'catchAllEmail',
       title: 'Catch All Email',

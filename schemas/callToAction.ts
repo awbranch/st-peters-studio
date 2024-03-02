@@ -1,5 +1,5 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { FaBoltLightning as icon } from 'react-icons/fa6';
+import { FaBoltLightning as icon, FaLightbulb } from 'react-icons/fa6';
 import {
   createImageField,
   createRichTextBlock,
@@ -11,8 +11,19 @@ export default defineType({
   title: 'Call to Action',
   type: 'object',
   icon,
-  description: 'A large call to action that is displayed landscape.',
   fields: [
+    defineField({
+      title: 'Tip',
+      description:
+        'A Call To Action is a large component with an image, text and button that "calls" the user to ' +
+        'perform some action such as Learn, Support, or Donate',
+      name: 'myCustomNote',
+      type: 'note',
+      options: {
+        icon: FaLightbulb,
+        tone: 'caution',
+      },
+    }),
     defineField({
       title: 'Alignment',
       name: 'alignment',

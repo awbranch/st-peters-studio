@@ -10,6 +10,9 @@ export default defineType({
       name: 'style',
       title: 'Style',
       type: 'string',
+      description:
+        'Primary buttons will have a more prominent color. If there are multiple buttons, ' +
+        'generally there is only one primary and the rest are secondary.',
       options: {
         list: [
           { title: 'Primary', value: 'primary' },
@@ -24,6 +27,7 @@ export default defineType({
       name: 'icon',
       title: 'Icon',
       type: 'string',
+      description: 'Optionally you can add an arrow icon to the button.',
       options: {
         list: [
           { title: 'None', value: 'none' },

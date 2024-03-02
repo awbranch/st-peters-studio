@@ -1,5 +1,5 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { FaTableCells as icon } from 'react-icons/fa6';
+import { FaLightbulb, FaTableCells as icon } from 'react-icons/fa6';
 
 export default defineType({
   name: 'buttonTileGrid',
@@ -8,6 +8,18 @@ export default defineType({
   icon,
   description: 'A grid of large button tiles',
   fields: [
+    defineField({
+      title: 'Tip',
+      description:
+        'A Button Tile Grid contains three squares across of large buttons each containing an icon, title and text. ' +
+        'These are useful for a prominent set of buttons to navigate to another page on the site.',
+      name: 'myCustomNote',
+      type: 'note',
+      options: {
+        icon: FaLightbulb,
+        tone: 'caution',
+      },
+    }),
     defineField({
       name: 'buttons',
       title: 'Buttons',

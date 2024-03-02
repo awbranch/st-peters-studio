@@ -1,5 +1,5 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { FaCubes as icon } from 'react-icons/fa6';
+import { FaCubes as icon, FaLightbulb } from 'react-icons/fa6';
 import components from './components';
 
 export default defineType({
@@ -9,6 +9,18 @@ export default defineType({
   type: 'document',
   icon,
   fields: [
+    defineField({
+      title: 'Tip',
+      description:
+        'A Component Set is a collection of one or more components that can be shared throughout the site. ' +
+        'Useful when you want the same set of components on several pages.',
+      name: 'myCustomNote',
+      type: 'note',
+      options: {
+        icon: FaLightbulb,
+        tone: 'caution',
+      },
+    }),
     defineField({
       name: 'name',
       title: 'Name',

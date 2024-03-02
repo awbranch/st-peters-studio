@@ -17,7 +17,7 @@ export default defineType({
           validation: (rule: any) => rule.required(),
         }) as any,
       ],
-      validation: (rule: any) => rule.required(),
+      validation: (rule: any) => rule.required().assetRequired(),
     }),
     defineField({
       name: 'title',

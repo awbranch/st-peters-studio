@@ -47,7 +47,7 @@ export default defineType({
       name: 'logo',
       title: 'Logo',
       type: 'image',
-      validation: (rule: any) => rule.required(),
+      validation: (rule: any) => rule.required().assetRequired(),
       group: 'logo',
     }),
     defineField({

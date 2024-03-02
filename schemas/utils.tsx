@@ -33,7 +33,7 @@ export function createImageField(
         validation: (rule: any) => rule.required(),
       }),
     ],
-    validation: (rule: any) => rule.required(),
+    validation: (rule: any) => rule.required().assetRequired(),
   });
 
   if (caption && field.fields) {
