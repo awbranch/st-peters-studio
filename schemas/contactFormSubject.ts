@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType, Slug } from 'sanity';
 import { FaAddressCard as icon } from 'react-icons/fa6';
 
 export default defineType({
@@ -12,7 +12,14 @@ export default defineType({
       title: 'ID',
       type: 'slug',
       description: 'Id of this contact item.',
-      validation: (rule: any) => rule.required(),
+      validation: (rule: any) =>
+        rule.required().custom((slug: Slug) => {
+          if (slug?.current && !/^[a-z-]+$/.test(slug.current)) {
+            return 'The ID must only contain lower case letters and dashes.';
+          } else {
+            return true;
+          }
+        }),
     }),
     defineField({
       name: 'name',
