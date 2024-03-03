@@ -1,4 +1,5 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType, Image } from 'sanity';
+import { getExtension } from '@sanity/asset-utils';
 import { FaWindowMinimize as icon } from 'react-icons/fa';
 
 export default defineType({
@@ -47,7 +48,22 @@ export default defineType({
       name: 'logo',
       title: 'Logo',
       type: 'image',
-      validation: (rule: any) => rule.required().assetRequired(),
+      validation: (rule: any) =>
+        rule
+          .required()
+          .assetRequired()
+          .custom((value: Image) => {
+            if (!value || !value.asset) {
+              return true;
+            }
+
+            const filetype = getExtension(value.asset._ref);
+            if (filetype !== 'svg') {
+              return 'Image must be an SVG';
+            }
+
+            return true;
+          }),
       group: 'logo',
     }),
     defineField({
