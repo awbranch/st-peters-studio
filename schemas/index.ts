@@ -24,6 +24,7 @@ import menuItem from './menuItem';
 import newsCategory from './newsCategory';
 import newsStory from './newsStory';
 import social from './social';
+import socialCards from './socialCards';
 import teamGridMember from './teamGridMember';
 import teamListMember from './teamListMember';
 
@@ -53,6 +54,7 @@ export const schemaTypes = [
   newsCategory,
   newsStory,
   social,
+  socialCards,
   teamGridMember,
   teamListMember,
 ];
