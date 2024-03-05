@@ -1,5 +1,6 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaFile as icon } from 'react-icons/fa';
+import { validateRasterImageTypes } from './utils';
 
 const pageWidths = [
   { title: 'Large', value: 'lg' },
@@ -72,6 +73,17 @@ export default defineType({
       type: 'text',
       description:
         'This description is not displayed to the user. Instead this is a concise summary of the pages for search engines to help index the page.',
+    }),
+    defineField({
+      name: 'socialImage',
+      title: 'Social Media Preview Image',
+      type: 'image',
+      description:
+        'Optional: When links to this page are shared on social media this preview image will be displayed. If not set, the default social media image set in Header will be displayed for this page.',
+      validation: (rule: any) => rule.custom(validateRasterImageTypes),
+      options: {
+        hotspot: true,
+      },
     }),
   ],
   preview: {

@@ -3,11 +3,13 @@ import {
   BlockListDefinition,
   BlockStyleDefinition,
   defineField,
+  Image,
   PortableTextBlock,
 } from 'sanity';
 import { MdFormatColorText } from 'react-icons/md';
 
 import { colorPalettes } from './globals';
+import { getExtension } from '@sanity/asset-utils';
 
 export function createImageField(
   name: string,
@@ -179,4 +181,31 @@ export function createPaletteField(
     },
     validation: (rule: any) => rule.required(),
   });
+}
+
+export function validateVectorImageType(value: Image) {
+  if (!value || !value.asset) {
+    return true;
+  }
+
+  const filetype = getExtension(value.asset._ref);
+  if (filetype !== 'svg') {
+    return 'Image must be an SVG';
+  }
+
+  return true;
+}
+
+export const validRasterImageTypes = ['jpg', 'jpeg', 'png', 'gif'];
+
+export function validateRasterImageTypes(value: Image) {
+  if (!value || !value.asset) {
+    return true;
+  }
+
+  const fileType = getExtension(value.asset._ref);
+  if (!validRasterImageTypes.includes(fileType)) {
+    return 'Image must be one of ' + validRasterImageTypes.join(', ');
+  }
+  return true;
 }
