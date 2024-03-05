@@ -4,7 +4,7 @@ import { FaAlignJustify as icon } from 'react-icons/fa6';
 
 export default defineType({
   name: 'titleText',
-  title: 'Title Text',
+  title: 'Text',
   type: 'object',
   icon,
   description: 'Display short form text such as titles.',

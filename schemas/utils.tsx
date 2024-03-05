@@ -158,9 +158,9 @@ export function createRichTextBlock(levels: Array<CRTLevel> = ['all']) {
 export function getFirstBlockText(portableText: PortableTextBlock[]): string {
   const block = (portableText || []).find((block) => block._type === 'block');
   return (block?.children as any)
-    .filter((child: any) => child?._type === 'span')
-    .map((span: any) => span?.text)
-    .join('');
+    ?.filter((child: any) => child?._type === 'span')
+    ?.map((span: any) => span?.text)
+    ?.join('');
 }
 
 export function createPaletteField(

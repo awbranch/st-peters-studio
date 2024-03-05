@@ -3,6 +3,8 @@ import { createPaletteField, createRichTextBlock } from './utils';
 import { FaWindowMaximize as icon } from 'react-icons/fa';
 import { getExtension } from '@sanity/asset-utils';
 
+const validPreviewImageTypes = ['jpg', 'jpeg', 'png', 'gif'];
+
 export default defineType({
   name: 'header',
   title: 'Header',
@@ -105,6 +107,30 @@ export default defineType({
       of: [defineArrayMember({ type: 'button' })],
       group: 'navigation',
       validation: (rule: any) => rule.max(1),
+    }),
+    defineField({
+      name: 'socialImage',
+      title: 'Default Social Media Preview Image',
+      type: 'image',
+      description:
+        "When links to St. Peter's Kitchen are shared on social media this preview image will be shown. The proper size for these images changes over time. Please check online for the proper dimensions.",
+      validation: (rule: any) =>
+        rule
+          .required()
+          .assetRequired()
+          .custom((value: Image) => {
+            if (!value || !value.asset) {
+              return true;
+            }
+
+            const fileType = getExtension(value.asset._ref);
+            if (!validPreviewImageTypes.includes(fileType)) {
+              return (
+                'Image must be one of ' + validPreviewImageTypes.join(', ')
+              );
+            }
+            return true;
+          }),
     }),
   ],
   preview: {
