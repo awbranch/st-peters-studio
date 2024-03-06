@@ -14,6 +14,7 @@ import callToActionListItem from './callToActionListItem';
 import documentListItem from './documentListItem';
 import faq from './faq';
 import iconListItem from './iconListItem';
+import imageGalleryItem from './imageGalleryItem';
 import imageTile from './imageTile';
 import impact from './impact';
 import job from './job';
@@ -43,6 +44,7 @@ export const schemaTypes = [
   documentListItem,
   faq,
   iconListItem,
+  imageGalleryItem,
   imageTile,
   impact,
   job,

@@ -9,6 +9,7 @@ import faqList from './faqList';
 import hero from './hero';
 import iconList from './iconList';
 import iframe from './iframe';
+import imageGallery from './imageGallery';
 import imageTileGrid from './imageTileGrid';
 import impactList from './impactList';
 import jobList from './jobList';
@@ -34,6 +35,7 @@ const components = [
   hero,
   iconList,
   iframe,
+  imageGallery,
   imageTileGrid,
   impactList,
   jobList,

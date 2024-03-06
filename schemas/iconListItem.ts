@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity';
+import { validateVectorImageType } from './utils';
 
 export default defineType({
   name: 'iconListItem',
@@ -15,9 +16,10 @@ export default defineType({
           title: 'Alternate Text',
           type: 'string',
           validation: (rule: any) => rule.required(),
-        }) as any,
+        }),
       ],
-      validation: (rule: any) => rule.required().assetRequired(),
+      validation: (rule: any) =>
+        rule.required().assetRequired().custom(validateVectorImageType),
     }),
     defineField({
       name: 'title',
