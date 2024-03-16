@@ -1,3 +1,4 @@
+import settings from './settings';
 import header from './header';
 import footer from './footer';
 import page from './page';
@@ -24,11 +25,13 @@ import listSetList from './listSetList';
 import menuItem from './menuItem';
 import newsCategory from './newsCategory';
 import newsStory from './newsStory';
+import redirect from './redirect';
 import social from './social';
 import teamGridMember from './teamGridMember';
 import teamListMember from './teamListMember';
 
 export const schemaTypes = [
+  settings,
   header,
   footer,
   page,
@@ -54,6 +57,7 @@ export const schemaTypes = [
   menuItem,
   newsCategory,
   newsStory,
+  redirect,
   social,
   teamGridMember,
   teamListMember,
