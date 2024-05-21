@@ -9,6 +9,7 @@ import faqList from './faqList';
 import hero from './hero';
 import iconList from './iconList';
 import iframe from './iframe';
+import script from './script';
 import imageGallery from './imageGallery';
 import imageTileGrid from './imageTileGrid';
 import impactList from './impactList';
@@ -41,6 +42,7 @@ const components = [
   jobList,
   listSet,
   lunchMenuList,
+  script,
   teamGrid,
   teamList,
   titleText,
