@@ -33,7 +33,7 @@ export default defineType({
       name: 'notificationMessage',
       title: 'Notification Message',
       type: 'array',
-      of: [defineArrayMember(createRichTextBlock(['decorators']))],
+      of: [defineArrayMember(createRichTextBlock(['decorators', 'links']))],
       hidden: ({ document }) => !document?.showNotification,
       group: 'notification',
     }),
