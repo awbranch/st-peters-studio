@@ -2,13 +2,6 @@ import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaFile as icon } from 'react-icons/fa';
 import { validateRasterImageTypes } from './utils';
 
-const pageWidths = [
-  { title: 'Large', value: 'lg' },
-  { title: 'Medium', value: 'md' },
-  { title: 'Small', value: 'sm' },
-  { title: 'Extra Small', value: 'xs' },
-];
-
 export default defineType({
   name: 'page',
   title: 'Pages',
@@ -48,18 +41,6 @@ export default defineType({
       type: 'string',
       description:
         'The page title to be shown in the browser tab and used for SEO.',
-    }),
-    defineField({
-      title: 'Max Width',
-      name: 'maxWidth',
-      type: 'string',
-      initialValue: 'md',
-      options: {
-        list: pageWidths,
-        layout: 'radio',
-        direction: 'horizontal',
-      },
-      validation: (rule: any) => rule.required(),
     }),
     defineField({
       name: 'blocks',

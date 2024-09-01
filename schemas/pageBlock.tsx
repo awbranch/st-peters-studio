@@ -2,7 +2,7 @@ import { defineArrayMember, defineField, defineType } from 'sanity';
 import BlockPreview from './BlockPreview';
 import components from './components';
 import { createPaletteField } from './utils';
-import { colorPalettes } from './globals';
+import { colorPalettes, pageWidths } from './globals';
 
 export default defineType({
   name: 'pageBlock',
@@ -27,6 +27,20 @@ export default defineType({
     }),
     createPaletteField('palette', 'Palette'),
     defineField({
+      name: 'maxWidth',
+      title: 'Max Width',
+      description:
+        'The maximum width of this block on the page. Narrower widths are ideal for text heavy blocks to avoid long line lengths.',
+      type: 'string',
+      options: {
+        list: pageWidths,
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      initialValue: 'md',
+      validation: (rule: any) => rule.required(),
+    }),
+    defineField({
       name: 'components',
       title: 'Components',
       type: 'array',
@@ -37,13 +51,28 @@ export default defineType({
     select: {
       id: 'id',
       hidden: 'hidden',
+      maxWidth: 'maxWidth',
       palette: 'palette',
       components: 'components',
     },
-    prepare({ id, hidden, palette, components }) {
+    prepare({ id, hidden, palette, maxWidth, components }) {
+      let subtitle = '';
+      if (hidden) {
+        subtitle = 'Hidden';
+      } else if (components) {
+        subtitle += `${components.length} Components`;
+
+        if (maxWidth) {
+          let w = pageWidths.find((w) => w.value === maxWidth);
+          if (w) {
+            subtitle += ` - ${w.title}`;
+          }
+        }
+      }
+
       return {
         title: `#${id?.current}`,
-        subtitle: hidden ? 'hidden' : `${components?.length || '0'} components`,
+        subtitle: subtitle,
         media: (
           <BlockPreview
             color={

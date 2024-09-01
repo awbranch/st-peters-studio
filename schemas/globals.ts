@@ -20,3 +20,10 @@ export const colorPalettes = [
     background: '#111827',
   },
 ];
+
+export const pageWidths = [
+  { title: 'Large', value: 'lg' },
+  { title: 'Medium', value: 'md' },
+  { title: 'Small', value: 'sm' },
+  { title: 'Extra Small', value: 'xs' },
+];
