@@ -3,20 +3,21 @@ import buttonRow from './buttonRow';
 import buttonTileGrid from './buttonTileGrid';
 import callToAction from './callToAction';
 import callToActionList from './callToActionList';
+import componentSetReference from './componentSetReference';
 import contactForm from './contactForm';
 import documentList from './documentList';
 import faqList from './faqList';
 import hero from './hero';
 import iconList from './iconList';
 import iframe from './iframe';
-import script from './script';
 import imageGallery from './imageGallery';
 import imageTileGrid from './imageTileGrid';
 import impactList from './impactList';
 import jobList from './jobList';
 import listSet from './listSet';
+import logoGrid from './logoGrid';
 import lunchMenuList from './lunchMenuList';
-import componentSetReference from './componentSetReference';
+import script from './script';
 import teamGrid from './teamGrid';
 import teamList from './teamList';
 import titleText from './titleText';
@@ -41,6 +42,7 @@ const components = [
   impactList,
   jobList,
   listSet,
+  logoGrid,
   lunchMenuList,
   script,
   teamGrid,

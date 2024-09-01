@@ -10,8 +10,8 @@ import action from './action';
 import bookmark from './bookmark';
 import button from './button';
 import buttonTile from './buttonTile';
-import contactFormSubject from './contactFormSubject';
 import callToActionListItem from './callToActionListItem';
+import contactFormSubject from './contactFormSubject';
 import documentListItem from './documentListItem';
 import faq from './faq';
 import iconListItem from './iconListItem';
@@ -20,8 +20,9 @@ import imageTile from './imageTile';
 import impact from './impact';
 import job from './job';
 import link from './link';
-import lunchMenu from './lunchMenu';
 import listSetList from './listSetList';
+import logoGridItem from './logoGridItem';
+import lunchMenu from './lunchMenu';
 import menuItem from './menuItem';
 import newsCategory from './newsCategory';
 import newsStory from './newsStory';
@@ -37,13 +38,13 @@ export const schemaTypes = [
   page,
   block,
   ...components,
-  componentSet,
   action,
   bookmark,
   button,
   buttonTile,
-  contactFormSubject,
   callToActionListItem,
+  componentSet,
+  contactFormSubject,
   documentListItem,
   faq,
   iconListItem,
@@ -52,8 +53,9 @@ export const schemaTypes = [
   impact,
   job,
   link,
-  lunchMenu,
   listSetList,
+  logoGridItem,
+  lunchMenu,
   menuItem,
   newsCategory,
   newsStory,

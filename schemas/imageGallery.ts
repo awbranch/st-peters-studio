@@ -13,6 +13,15 @@ export default defineType({
       type: 'array',
       of: [defineArrayMember({ type: 'imageGalleryItem' })],
     }),
+
+    defineField({
+      name: 'columns',
+      title: 'Columns',
+      type: 'number',
+      description: 'The number of columns to display in the gallary (2 to 4).',
+      validation: (rule: any) => rule.required().min(2).max(4),
+      initialValue: 2,
+    }),
   ],
   preview: {
     select: { items: 'items' },
